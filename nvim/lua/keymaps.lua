@@ -1,5 +1,6 @@
 -- File explorer space-v
 vim.keymap.set("n", "<leader>v", vim.cmd.Ex)
+vim.keymap.set("n","<leader>w", "<cmd>w<CR>")
 
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "q:", "<nop>")

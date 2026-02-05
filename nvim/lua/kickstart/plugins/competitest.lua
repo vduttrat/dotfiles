@@ -34,7 +34,7 @@ return {
 		},
 	},
 	runner_ui = {
-		interface = "popup",
+		interface = "split",
 		selector_show_nu = false,
 		selector_show_rnu = false,
 		show_nu = true,
@@ -71,7 +71,7 @@ return {
 	split_ui = {
 		position = "right",
 		relative_to_editor = true,
-		total_width = 0.3,
+		total_width = 0.5,
 		vertical_layout = {
 			{ 1, "tc" },
 			{ 1, { { 1, "so" }, { 1, "eo" } } },
@@ -89,21 +89,21 @@ return {
 	save_all_files = false,
 	compile_directory = ".",
 	compile_command = {
-		c = { exec = "gcc", args = { "-Wall", "$(FNAME)", "-o", "$(FNOEXT)" } },
-		cpp = { exec = "g++", args = { "-Wall", "$(FNAME)", "-o", "$(FNOEXT)" } },
+		c = { exec = "gcc", args = { "-Wall", "$(FNAME)", "-o", "main" } },
+		cpp = { exec = "g++", args = { "-Wall", "$(FNAME)", "-o", "main" } },
 		rust = { exec = "rustc", args = { "$(FNAME)" } },
 		java = { exec = "javac", args = { "$(FNAME)" } },
 	},
 	running_directory = ".",
 	run_command = {
-		c = { exec = "./$(FNOEXT)" },
-		cpp = { exec = "./$(FNOEXT)" },
+		c = { exec = "./main" },
+		cpp = { exec = "./main" },
 		rust = { exec = "./$(FNOEXT)" },
 		python = { exec = "python", args = { "$(FNAME)" } },
 		java = { exec = "java", args = { "$(FNOEXT)" } },
 	},
 	multiple_testing = -1,
-	maximum_time = 5000,
+	maximum_time = 20000,
 	output_compare_method = "squish",
 	view_output_diff = false,
 

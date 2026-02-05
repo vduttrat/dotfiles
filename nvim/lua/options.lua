@@ -76,13 +76,10 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
-
 vim.opt.ts=4 
 vim.opt.sts=4 
-vim.opt.sw=4 
+vim.opt.sw=4
 vim.opt.expandtab=true
-
-vim.opt.completeopt = { "menuone", "noselect", "popup", "noinsert" }
 
 -- Templates
 
@@ -90,7 +87,9 @@ vim.cmd([[
 
 	autocmd filetype cpp nnoremap <F10> :w <bar> exec 'term clear && g++ '.shellescape('%').' -fsanitize=undefined -fno-sanitize-recover -fsanitize=address -Wconversion -Wall -Wextra -O2 -pedantic -o main && ./main'<CR>
 	autocmd filetype javascript nnoremap <F5> :w <bar> exec 'term clear && node %'<CR>
+	autocmd filetype sh nnoremap <F5> :w <bar> exec 'term clear && bash %'<CR>
     :autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp 
     :autocmd BufNewFile *.html 0r ~/.vim/templates/skeleton.html
+    :autocmd BufNewFile *.java 0r ~/.vim/templates/skeleton.java
 
 ]])

@@ -18,6 +18,14 @@ return {
           return 'make install_jsregexp'
         end)(),
         dependencies = {
+          {
+           "mlaursen/vim-react-snippets",
+           opts = {
+             readonly_props = true, -- Set to `false` if all props should no longer be wrapped in `Readonly<T>`.
+             test_framework = "@jest/globals", -- Set to "vitest" if you use vitest
+             test_renderer_path = "@testing-library/user-event", -- Set to a custom test renderer. For example "@/test-utils"
+           }
+          },
           -- `friendly-snippets` contains a variety of premade snippets.
           --    See the README about individual language/framework/plugin snippets:
           --    https://github.com/rafamadriz/friendly-snippets
@@ -57,7 +65,7 @@ return {
         -- <c-k>: Toggle signature help
         --
         -- See :h blink-cmp-config-keymap for defining your own keymap
-        preset = 'super-tab',
+        preset = 'default',
 
         -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
