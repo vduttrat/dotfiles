@@ -12,7 +12,7 @@ vim.o.number = true
 vim.o.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
-vim.o.mouse = 'n'
+-- vim.o.mouse = 'n'
 
 -- Don't show the mode, since it's already in the status line
 vim.o.showmode = false
@@ -85,6 +85,8 @@ vim.opt.expandtab=true
 
 vim.cmd([[
 
+	autocmd filetype c nnoremap <F10> :w <bar> exec 'term clear && gcc '.shellescape('%').' -o main && ./main'<CR>
+	autocmd filetype java nnoremap <F10> :w <bar> exec 'term clear && java %'<CR>
 	autocmd filetype cpp nnoremap <F10> :w <bar> exec 'term clear && g++ '.shellescape('%').' -fsanitize=undefined -fno-sanitize-recover -fsanitize=address -Wconversion -Wall -Wextra -O2 -pedantic -o main && ./main'<CR>
 	autocmd filetype javascript nnoremap <F5> :w <bar> exec 'term clear && node %'<CR>
 	autocmd filetype sh nnoremap <F5> :w <bar> exec 'term clear && bash %'<CR>
