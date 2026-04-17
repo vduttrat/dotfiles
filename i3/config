@@ -61,6 +61,10 @@ bindsym Mod1+t exec alacritty
  
 # kill focused window
 bindsym Mod1+Shift+q kill
+
+
+# move to cp
+bindsym Mod1+c exec alacritty --working-directory /home/vduttrat/prac/cf/ -e nvim main.cpp
  
 # start dmenu (a program launcher)
 bindsym Mod1+d exec --no-startup-id dmenu_run -i -l 5 -p "Open: " -fn "0xProtoNerdFont-18" -nb "#000" -nf "#515151" -sf "#fff" -sb "#000"
@@ -225,7 +229,7 @@ bar {
    position top
    mode dock
    tray_output primary
-   tray_padding -4
+   tray_padding 0
    font pango:0xProtoNerdFont 17
    separator_symbol "‎"
    strip_workspace_numbers yes
