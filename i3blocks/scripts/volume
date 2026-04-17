@@ -1,0 +1,4 @@
+#!/bin/sh
+# echo "Volume: $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2*100 $3}')% |"
+
+echo "<span foreground='#fff' size='large'>   </span><span foreground='#fff'>$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2*100 $3}')% \\\</span>"

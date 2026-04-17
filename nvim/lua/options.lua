@@ -81,6 +81,12 @@ vim.opt.sts=4
 vim.opt.sw=4
 vim.opt.expandtab=true
 
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    vim.cmd("set indentexpr=")
+  end,
+})
+
 -- Templates
 
 vim.cmd([[

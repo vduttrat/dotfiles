@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo "<span foreground='#fff' size='large'> </span><span foreground='#fff'>$(nmcli dev wifi show | grep SSID | cut -d: -f2) \\\</span>"
+
